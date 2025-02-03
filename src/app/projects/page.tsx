@@ -3,47 +3,52 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
+import logoAnimaginary from '@/images/logos/logo512.png'
+import logoCosmos from '@/images/logos/image2.png'
+import logoHelioStream from '@/images/logos/image.png'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoPlanetaria from '@/images/logos/LogoProvisional.avif'
 
 const projects = [
   {
-    name: 'Planetaria',
+    name: 'Medicina Estétice',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'Web sobre una clínica de medicina estética. Listado de tratamientos, productos, compra de tarjetas de regalo, ...',
+    link: {
+      href: 'https://www.medicinaesteticaalejandro.com/',
+      label: 'www.medicinaesteticaalejandro.com',
+    },
     logo: logoPlanetaria,
   },
   {
     name: 'Animaginary',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'Web de venta de productos de Apple a través de un sistema de cuentas de usuarios.',
+    link: {
+      href: 'https://github.com/arodriguuij/applestore',
+      label: 'www.github.com/arodriguuij/applestore',
+    },
     logo: logoAnimaginary,
   },
   {
-    name: 'HelioStream',
+    name: 'Cov19',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Applicación web para conocer el número contagiados, fallecidos y recuperdos por causa de Covid en tiempo real.',
+    link: {
+      href: 'https://github.com/arodriguuij/arodriguuij-cov19-TodoList',
+      label: 'www.github.com/arodriguuij/arodriguuij-cov19-TodoList',
+    },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'CajerosCeres',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'Aplicación móvil Android de cajeros en la ciudad de cáceres con las comisiones respecto a la entidad bancaria seleccionada por el usuario.',
+    link: {
+      href: 'https://github.com/arodriguuij/CajerosCeres',
+      label: 'www.github.com/arodriguuij/CajerosCeres',
+    },
     logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
   },
 ]
 
@@ -59,15 +64,15 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  title: 'Proyectos',
+  description: 'Proyectos realizados en mi tiempo libre.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title="Proyectos realizados en mi tiempo libre"
+      intro="En esta sección encontrarás una selección de mis proyectos personales, donde he explorado nuevas tecnologías, conceptos creativos y soluciones innovadoras. Cada uno refleja mi pasión por aprender, experimentar y construir ideas."
     >
       <ul
         role="list"
@@ -84,7 +89,9 @@ export default function Projects() {
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link href={project.link.href} target="_blank">
+                {project.name}
+              </Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">

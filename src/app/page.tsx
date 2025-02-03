@@ -11,10 +11,11 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoInfoser from '@/images/logos/infoser.svg'
+import logoZerintia from '@/images/logos/zerintia.svg'
+import logoMercedes from '@/images/logos/mercedes.svg'
+import logoAmaris from '@/images/logos/amaris.svg'
+import logoFreelance from '@/images/logos/freelance.svg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
@@ -85,14 +86,14 @@ function ArrowDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 function Article({ article }: { article: ArticleWithSlug }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
+      <Card.Title /* href={`/articles/${article.slug}`} */>
         {article.title}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
         {formatDate(article.date)}
       </Card.Eyebrow>
       <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
+      {/* <Card.Cta>Read article</Card.Cta> */}
     </Card>
   )
 }
@@ -159,7 +160,7 @@ function Role({ role }: { role: Role }) {
   return (
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full ring-1 shadow-md shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-        <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
+        <Image src={role.logo} alt="" className="rounded-full" unoptimized />
       </div>
       <dl className="flex flex-auto flex-wrap gap-x-2">
         <dt className="sr-only">Company</dt>
@@ -187,35 +188,42 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Mercedes Benz',
+      title: 'Lead Frontend Software Engineer',
+      logo: logoMercedes,
+      start: '2022',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Infoser Technological Solutions',
+      title: 'Frontend Software Engineer',
+      logo: logoInfoser,
+      start: '2021',
+      end: '2022',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'Zerintia Technologies',
+      title: 'Frontend Software Engineer',
+      logo: logoZerintia,
+      start: '2020',
+      end: '2021',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: 'Freelance',
+      title: 'Full-Stack developer',
+      logo: logoFreelance,
+      start: '2019',
+      end: '2020',
+    },
+    {
+      company: 'Amaris Consulting',
+      title: 'Full-Stack developer',
+      logo: logoAmaris,
+      start: '2017',
+      end: '2018',
     },
   ]
 
@@ -230,7 +238,12 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button
+        href="https://drive.google.com/file/d/1_6FndZC8Y4KV_BX2xmJMTQwV3OmYKSav/view?usp=share_link"
+        target="_blank"
+        variant="secondary"
+        className="group mt-6 w-full"
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -257,6 +270,7 @@ function Photos() {
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
+              style={{ filter: 'grayscale(72%)' }}
             />
           </div>
         ))}
@@ -273,28 +287,31 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software designer, founder, and amateur astronaut.
+            Ingeniero de Software de día, Triatleta de fin de semana.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Spencer, a software designer and entrepreneur based in New York
-            City. I’m the founder and CEO of Planetaria, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            Soy Alejandro Rodríguez, ingeniero de software y emprendedor con
+            base en Navalmoral de la Mata, España. Trabajo como freelance,
+            aprovechando mis habilidades para crear soluciones digitales que
+            ayudan a las empresas a obtener mejores resultados y fomentar su
+            crecimiento.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="#" aria-label="Follow on X" icon={XIcon} />
             <SocialLink
-              href="#"
+              href="https://www.instagram.com/alejandro.guez/"
+              target="_blank"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="#"
+              href="https://github.com/arodriguuij"
+              target="_blank"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="#"
+              href="https://www.linkedin.com/in/alejandro-rodriguez-escudero-260362144/"
+              target="_blank"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
@@ -310,7 +327,6 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
             <Resume />
           </div>
         </div>
