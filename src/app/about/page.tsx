@@ -70,7 +70,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Soy Alejandro Rodriguez. Actulamente estoy en la Navalmoral de la
+            Soy Alejandro Rodriguez. Viviendo en Navalmoral de la
             Mata, donde diseño y creo soluciones.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
@@ -96,7 +96,7 @@ export default function About() {
             <p>
               Si no estoy con el ordenador, me puedes encontrar practicando los
               deportes que me apasionan, como son natación o ciclismo. O leyendo
-              un libro mientras disfruto de un café (flat-white).
+              un libro mientras disfruto de un café (flat-white ☕).
             </p>
           </div>
         </div>

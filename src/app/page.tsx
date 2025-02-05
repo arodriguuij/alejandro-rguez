@@ -291,10 +291,10 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Soy Alejandro Rodríguez, ingeniero de software y emprendedor con
-            base en Navalmoral de la Mata, España. Trabajo como freelance,
-            aprovechando mis habilidades para crear soluciones digitales que
-            ayudan a las empresas a obtener mejores resultados y fomentar su
-            crecimiento.
+            base en Navalmoral de la Mata. En mi tiempo libre trabajo como
+            freelance, aprovechando mis habilidades adquiridas durante mi
+            carrera profesional para crear soluciones digitales que ayudan a las
+            empresas a obtener mejores resultados y fomentar su crecimiento.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
